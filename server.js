@@ -3,8 +3,8 @@ const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-    console.log(typeof req.query.num1)
-    res.send("Hello World!");
+    const result = add(Number(req.query.num1), Number(req.query.num2));
+    res.json(result);
 })
 
 app.listen(port, () => {
